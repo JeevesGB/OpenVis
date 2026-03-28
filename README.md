@@ -144,7 +144,7 @@ Example:
 
 ## License
 
-MIT License (or your preferred license)
+MIT License
 
 ---
 
