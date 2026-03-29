@@ -1,0 +1,13 @@
+{
+  "theme": "custom",
+  "osc_color": "#ff00d5",
+  "bg_color": "#0a0207",
+  "grid_color": "#200d22",
+  "zoom": 5.5,
+  "thickness": 4,
+  "bar_count": 128,
+  "gain": 3.4,
+  "peak_hold": false,
+  "window_fn": "hanning",
+  "device": 22
+}
