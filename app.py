@@ -19,17 +19,17 @@ RATE    = 44100
 HISTORY = 3
 SETTINGS_FILE = Path("dat/sve/settings.json")
 DEFAULT_SETTINGS = {
-    "theme":      "green",
-    "osc_color":  "#00e678",
+    "theme":      "grey",
+    "osc_color":  "#939e9e",
     "bg_color":   "#0a0a12",
     "grid_color": "#1e1e32",
     "zoom":       1.0,
     "thickness":  2,
     "bar_count":  128,
     "gain":       1.0,
-    "peak_hold":  True,
+    "peak_hold":  False,
     "window_fn":  "hanning",
-    "device":     None,
+    "device":     22,  # default to a common virtual audio device, but will be overridden by saved settings if available
 }
 
 THEMES = {
@@ -247,7 +247,6 @@ class SpectrumWidget(QWidget):
 
         x, y, w, h = rect.x(), rect.y(), rect.width(), rect.height()
 
-        # Ensure arrays match current bar_count before any maths
         n = self.settings["bar_count"]
         self._ensure_size(n)
 
@@ -274,7 +273,6 @@ class SpectrumWidget(QWidget):
         ])
         bars /= (bars.max() + 1e-9)
 
-        # Both arrays are guaranteed to be size n here
         self.smoothed_fft = self.smoothed_fft * 0.75 + bars * 0.25
 
         if self.settings["peak_hold"]:
@@ -331,8 +329,8 @@ class SettingsPanel(QScrollArea):
     def __init__(self, settings: Settings, osc, spec, on_device_change):
         super().__init__()
         self.settings = settings
-        self.setMinimumWidth(220)
-        self.setMaximumWidth(300)  # optional cap
+        self.setMinimumWidth(300)
+        self.setMaximumWidth(500)
         self.setWidgetResizable(True)
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
 
