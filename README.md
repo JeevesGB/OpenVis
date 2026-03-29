@@ -33,7 +33,7 @@ A real-time audio visualizer built with PyQt6, featuring an oscilloscope and spe
 * Persistent Settings
 
   * Automatically saves to:
-    ~/.audio_visualizer_settings.json
+    dat/sve/settings.json
 
 ---
 
