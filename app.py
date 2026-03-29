@@ -17,8 +17,7 @@ from PyQt6.QtCore import QPointF
 CHUNK   = 1024
 RATE    = 44100
 HISTORY = 3
-SETTINGS_FILE = Path.home() / ".audio_visualizer_settings.json"
-
+SETTINGS_FILE = Path("dat/sve/settings.json")
 DEFAULT_SETTINGS = {
     "theme":      "green",
     "osc_color":  "#00e678",
@@ -62,6 +61,7 @@ class Settings:
 
     def save(self):
         try:
+            SETTINGS_FILE.parent.mkdir(parents=True, exist_ok=True)
             SETTINGS_FILE.write_text(json.dumps(self.data, indent=2))
         except Exception:
             pass
