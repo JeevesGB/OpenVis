@@ -1,2 +1,2 @@
 @echo off 
-python OpenVis.py
+python src/main.py

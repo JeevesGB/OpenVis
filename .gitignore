@@ -1,2 +1,4 @@
 app2.py
 archive
+__pycache__
+data

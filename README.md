@@ -56,7 +56,9 @@ A real-time audio visualizer built with PyQt6, featuring an oscilloscope and spe
 
 ## Running the App
 
-python main.py
+* python src/main.py
+    or
+* run.bat
 
 ---
 
@@ -148,9 +150,7 @@ MIT License
 
 ---
 
-## Credits
-
-Built with:
+## Built with:
 
 * PyQt6
 * numpy
