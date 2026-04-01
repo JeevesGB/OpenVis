@@ -8,7 +8,7 @@ RATE = 44100
 HISTORY = 3
 
 # ====================== SETTINGS ======================
-SETTINGS_FILE = Path("dat/sve/settings.json")
+SETTINGS_FILE = Path("src/dat/sve/settings.json")
 
 DEFAULT_SETTINGS = {
     "theme":      "grey",

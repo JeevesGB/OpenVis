@@ -1,0 +1,13 @@
+{
+  "theme": "purple",
+  "osc_color": "#cc88ff",
+  "bg_color": "#0d0814",
+  "grid_color": "#1e1230",
+  "zoom": 3.4,
+  "thickness": 2,
+  "bar_count": 128,
+  "gain": 8.0,
+  "peak_hold": false,
+  "window_fn": "hanning",
+  "device": 22
+}
