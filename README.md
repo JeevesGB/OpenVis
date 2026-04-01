@@ -150,7 +150,7 @@ MIT License
 
 ---
 
-## Built with:
+## Built With
 
 * PyQt6
 * numpy
