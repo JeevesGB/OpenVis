@@ -52,11 +52,17 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(viz_wrap)
 
-        self.settings_btn = QPushButton("⚙ Settings")
-        self.analysis_btn = QPushButton("📊 Analysis")
+        self.settings_btn = QPushButton("⚙")
+        self.settings_btn.setStyleSheet("font-size: 14px;")
+        self.settings_btn.setToolTip("Settings")
+        self.analysis_btn = QPushButton("📊")
+        self.analysis_btn.setStyleSheet("font-size: 14px;")
+        self.analysis_btn.setToolTip("Analysis")
 
-        self.settings_btn.setFixedHeight(28)
-        self.analysis_btn.setFixedHeight(28)
+        self.settings_btn.setFixedHeight(20)
+        self.settings_btn.setFixedWidth(20)
+        self.analysis_btn.setFixedHeight(20)
+        self.analysis_btn.setFixedWidth(20)
 
         self.settings_btn.clicked.connect(self.open_settings)
         self.analysis_btn.clicked.connect(self.open_analysis)
@@ -74,7 +80,8 @@ class MainWindow(QMainWindow):
         self.timer.timeout.connect(self.tick)
         self.timer.start(33)
 
-        self.resize(1380, 920)
+        self.resize(1280, 920)
+        self.setMinimumSize(600, 600)
         self.show()
 
     def open_settings(self):

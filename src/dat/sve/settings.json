@@ -1,12 +1,12 @@
 {
-  "theme": "purple",
-  "osc_color": "#cc88ff",
-  "bg_color": "#0d0814",
-  "grid_color": "#1e1230",
-  "zoom": 3.4,
+  "theme": "white",
+  "osc_color": "#ffffff",
+  "bg_color": "#0a0a0a",
+  "grid_color": "#222222",
+  "zoom": 1.0,
   "thickness": 2,
   "bar_count": 128,
-  "gain": 8.0,
+  "gain": 3.0,
   "peak_hold": false,
   "window_fn": "hanning",
   "device": 22
