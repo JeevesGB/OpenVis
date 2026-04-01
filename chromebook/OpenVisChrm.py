@@ -51,10 +51,6 @@ THEMES = {
 
 NOTE_NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B']
 
-
-# ---------------------------------------------------------------------------
-# Settings
-# ---------------------------------------------------------------------------
 class Settings:
     def __init__(self):
         self.data = dict(DEFAULT_SETTINGS)
@@ -77,10 +73,6 @@ class Settings:
     def __getitem__(self, k): return self.data[k]
     def __setitem__(self, k, v): self.data[k] = v
 
-
-# ---------------------------------------------------------------------------
-# Audio engine (Chromebook-safe)
-# ---------------------------------------------------------------------------
 class AudioEngine:
     def __init__(self, device=None):
         self.buffer  = deque(maxlen=HISTORY)
