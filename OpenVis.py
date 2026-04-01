@@ -36,7 +36,7 @@ DEFAULT_SETTINGS = {
     "gain":       1.0,
     "peak_hold":  False,
     "window_fn":  "hanning",
-    "device":     22,
+    "device":     None,
 }
 
 THEMES = {
@@ -93,7 +93,36 @@ class AudioEngine:
         for _ in range(HISTORY):
             self.buffer.append(np.zeros(CHUNK, dtype=np.float32))
 
-        info     = sd.query_devices(device if device is not None else sd.default.device[0], 'input')
+        # Resolve device: validate saved/given index, fall back to first valid input
+        def first_input_device():
+            for i, d in enumerate(sd.query_devices()):
+                if d['max_input_channels'] > 0:
+                    try:
+                        sd.query_devices(i, 'input')
+                        return i
+                    except Exception:
+                        continue
+            return None
+
+        if device is not None:
+            # Validate the saved device still exists and is an input
+            try:
+                sd.query_devices(device, 'input')
+            except Exception:
+                device = None  # stale index — fall through to auto-detect
+
+        if device is None:
+            default_input = sd.default.device[0]
+            try:
+                sd.query_devices(default_input, 'input')
+                device = default_input
+            except Exception:
+                device = first_input_device()
+
+        if device is None:
+            raise RuntimeError("No input audio device found.")
+
+        info     = sd.query_devices(device, 'input')
         self._ch = min(2, int(info['max_input_channels']))
 
         self.stream = sd.InputStream(
