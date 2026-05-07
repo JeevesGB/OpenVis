@@ -4,4 +4,6 @@ __pycache__
 data
 chromebook
 build.bat
-    
+dist
+build
+OpenViz.spec
