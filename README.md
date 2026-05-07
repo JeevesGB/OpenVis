@@ -42,13 +42,13 @@ A real-time audio visualizer built with PyQt6, featuring an oscilloscope and spe
 ## Screenshots
 
 * Top: Oscilloscope waveform 
-  ![top](src\dat\img\wav.png)
+  ![top](src/dat/img/wav.png)
 * Bottom: Frequency spectrum
-  ![spec](src\dat\img\spec.png)
+  ![spec](src/dat/img/spec.png)
 * Bottom bar: Peak and RMS levels
-  ![luf](src\dat\img\luf.png)
+  ![luf](src/dat/img/luf.png)
 * All Together (Each element can be resized)
-  ![all](src\dat\img\all.png)
+  ![all](src/dat/img/all.png)
 
 ---
 
