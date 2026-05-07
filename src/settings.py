@@ -22,6 +22,9 @@ DEFAULT_SETTINGS = {
     "peak_hold":  False,
     "window_fn":  "hanning",
     "device":     None,
+    "show_osc":   True,
+    "show_spec":  True,
+    "show_lufs":  True,
 }
 
 THEMES = {

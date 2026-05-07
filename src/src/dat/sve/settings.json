@@ -1,0 +1,16 @@
+{
+  "theme": "grey",
+  "osc_color": "#939e9e",
+  "bg_color": "#0a0a12",
+  "grid_color": "#1e1e32",
+  "zoom": 1.0,
+  "thickness": 3,
+  "bar_count": 128,
+  "gain": 5.4,
+  "peak_hold": false,
+  "window_fn": "hanning",
+  "device": 19,
+  "show_osc": true,
+  "show_spec": false,
+  "show_lufs": false
+}

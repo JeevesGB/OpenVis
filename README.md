@@ -1,4 +1,6 @@
-# OpenVis
+![alt text](src/dat/img/ovis.png)
+
+# **OpenVis**
 
 A real-time audio visualizer built with PyQt6, featuring an oscilloscope and spectrum analyzer with customizable themes, input devices, and visual settings.
 
@@ -37,12 +39,16 @@ A real-time audio visualizer built with PyQt6, featuring an oscilloscope and spe
 
 ---
 
-## Overview
+## Screenshots
 
-* Top: Oscilloscope waveform
+* Top: Oscilloscope waveform 
+  ![top](src\dat\img\wav.png)
 * Bottom: Frequency spectrum
-* Right panel: Controls and settings
+  ![spec](src\dat\img\spec.png)
 * Bottom bar: Peak and RMS levels
+  ![luf](src\dat\img\luf.png)
+* All Together (Each element can be resized)
+  ![all](src\dat\img\all.png)
 
 ---
 
@@ -114,15 +120,27 @@ Save Settings
 ## Configuration File
 
 Settings are saved to:
-~/.audio_visualizer_settings.json
+dat/sve/settings.json
 
-Example:
-{
-"theme": "green",
-"gain": 1.0,
-"bar_count": 128,
-"peak_hold": true
-}
+**Example:**
+  ```
+  {
+  "theme": "grey",
+  "osc_color": "#939e9e",
+  "bg_color": "#0a0a12",
+  "grid_color": "#1e1e32",
+  "zoom": 1.0,
+  "thickness": 3,
+  "bar_count": 128,
+  "gain": 5.4,
+  "peak_hold": false,
+  "window_fn": "hanning",
+  "device": 19,
+  "show_osc": true,
+  "show_spec": false,
+  "show_lufs": false
+  }
+  ```
 
 ---
 
